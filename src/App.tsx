@@ -7,6 +7,27 @@ const axios = axiosBase.create({
   baseURL: process.env.REACT_APP_WEATHER_API_BASE_URL
 });
 
+const onSuccessGetPosition = (position: GeolocationPosition) => {
+  const latitude  = position.coords.latitude;
+  const longitude = position.coords.longitude;
+
+  alert(`latitude: ${latitude}, longitude: ${longitude}`)
+}
+
+const onErrorGetPosition = () => {
+  // 都庁所在地
+  const latitude  = 35.68966414887361;
+  const longitude = 139.69210148192565;
+
+  alert(`latitude: ${latitude}, longitude: ${longitude}`)
+}
+
+if(!navigator.geolocation) {
+  onErrorGetPosition()
+} else {
+  navigator.geolocation.getCurrentPosition(onSuccessGetPosition, onErrorGetPosition);
+}
+
 function App() {
   axios.get("/onecall", {
     params: {
@@ -17,6 +38,8 @@ function App() {
       appid:process.env.REACT_APP_WEATHER_API_KEY
     }
   })
+
+
   return (
     <div className="App">
       <header className="App-header">
