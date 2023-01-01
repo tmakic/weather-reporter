@@ -13,7 +13,13 @@ const XAxisTick = ({
   y: number;
   payload: { value: string };
 }) => {
+  if (!payload.value) return <g x={x - 12} y={y + 4} height={60}></g>;
+
   const [datetime, weatherIcon] = payload.value.split("/");
+
+  if (!datetime || !weatherIcon)
+    return <g x={x - 12} y={y + 4} height={60}></g>;
+
   return (
     <g x={x - 12} y={y + 4} height={60}>
       <text
