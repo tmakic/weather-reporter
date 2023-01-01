@@ -3,6 +3,7 @@ import { WeatherContext } from "components/providers/CurrentWeather";
 import { roundNum } from "hooks/useNumber";
 
 import { WeatherIcon } from "components/WeatherIcon";
+import { ClothIcon } from "components/ClothIcon";
 
 import "./Summery.scss";
 
@@ -33,10 +34,24 @@ export const Summery = () => {
             <span className="Summery__Statistics__Content__Title">
               最高気温
             </span>
-            <span className="Summery__Statistics__Content__Num">
+            <span className="Summery__Statistics__Content__Num Summery__Statistics__Content__Num--Max">
               {roundNum(currentWeather?.temp_max)}
             </span>
             <span className="Summery__Statistics__Content__Unit">℃</span>
+            <a
+              className="Summery__Statistics__Content__ClothIconWrapper"
+              href={`https://www.google.com/search?q=気温${roundNum(
+                currentWeather?.temp_max
+              )}度+服装`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ClothIcon
+                className="Summery__Statistics__Content__ClothIcon"
+                width="24px"
+                height="24px"
+              />
+            </a>
           </div>
         )}
         {currentWeather?.temp_min && (
@@ -44,10 +59,24 @@ export const Summery = () => {
             <span className="Summery__Statistics__Content__Title">
               最低気温
             </span>
-            <span className="Summery__Statistics__Content__Num">
+            <span className="Summery__Statistics__Content__Num Summery__Statistics__Content__Num--Min">
               {roundNum(currentWeather?.temp_min)}
             </span>
             <span className="Summery__Statistics__Content__Unit">℃</span>
+            <a
+              className="Summery__Statistics__Content__ClothIconWrapper"
+              href={`https://www.google.com/search?q=気温${roundNum(
+                currentWeather?.temp_min
+              )}度+服装`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ClothIcon
+                className="Summery__Statistics__Content__ClothIcon"
+                width="24px"
+                height="24px"
+              />
+            </a>
           </div>
         )}
       </div>
