@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 
 import { Summery } from "./components/Summery";
 import { Graph } from "./components/Graph";

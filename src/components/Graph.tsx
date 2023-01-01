@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AreaChart, Area, LabelList, XAxis } from "recharts";
 import { WeatherContext } from "components/providers/CurrentWeather";
 
-import "./Graph.css";
+import "./Graph.scss";
 
 const XAxisTick = ({
   x,

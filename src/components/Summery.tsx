@@ -4,7 +4,7 @@ import { roundNum } from "hooks/useNumber";
 
 import { WeatherIcon } from "components/WeatherIcon";
 
-import "./Summery.css";
+import "./Summery.scss";
 
 export const Summery = () => {
   const { currentWeather } = useContext(WeatherContext);
