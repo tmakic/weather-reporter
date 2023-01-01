@@ -98,7 +98,8 @@ export const WeatherProvider = (props: { children: ReactNode }) => {
           feels_like: roundNum(response.data.main.feels_like),
           temp: roundNum(response.data.main.temp),
           temp_max: roundNum(response.data.main.temp_max),
-          temp_min: roundNum(response.data.main.temp_min)
+          temp_min: roundNum(response.data.main.temp_min),
+          weather: response.data.weather[0]
         });
       });
   };
@@ -125,7 +126,10 @@ export const WeatherProvider = (props: { children: ReactNode }) => {
               temp: roundNum(forecast.main.temp),
               temp_max: roundNum(forecast.main.temp_max),
               temp_min: roundNum(forecast.main.temp_min),
-              weather: forecast.weather[0]
+              weather: forecast.weather[0],
+              x_axis_data: `${formatDate(forecast.dt, "h:mm")}/${
+                forecast.weather[0].icon
+              }`
             };
           });
         setForecastList(newForecasList);

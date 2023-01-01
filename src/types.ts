@@ -4,15 +4,17 @@ export interface CurrentWeather {
   temp: number;
   temp_max: number;
   temp_min: number;
+  weather: Weather;
 }
 
 export interface DisplayForecast {
-  datetime: any; // TODO:後で直す
+  datetime: string;
   feels_like: number;
   temp: number;
   temp_max: number;
   temp_min: number;
-  weather: Weather
+  weather: Weather;
+  x_axis_data: string;
 }
 
 export interface Coord {
