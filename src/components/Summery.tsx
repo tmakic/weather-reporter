@@ -10,19 +10,47 @@ export const Summery = () => {
   const { currentWeather } = useContext(WeatherContext);
   return (
     <div className="Summery">
-      {currentWeather?.temp && <div>{roundNum(currentWeather?.temp)}℃</div>}
-      {currentWeather?.weather.icon && (
-        <WeatherIcon icon={currentWeather?.weather.icon} alt="WeatherIcon" />
-      )}
-      {currentWeather?.feels_like && (
-        <div>体感{roundNum(currentWeather?.feels_like)}℃</div>
-      )}
-      {currentWeather?.temp_max && (
-        <div>最高{roundNum(currentWeather?.temp_max)}℃</div>
-      )}
-      {currentWeather?.temp_min && (
-        <div>最低{roundNum(currentWeather?.temp_min)}℃</div>
-      )}
+      <div className="Summery__CurrentWeather">
+        {currentWeather?.weather.icon && (
+          <WeatherIcon
+            icon={currentWeather?.weather.icon}
+            alt="WeatherIcon"
+            width="200px"
+          />
+        )}
+        {currentWeather?.temp && (
+          <div className="Summery__CurrentWeather__Temp">
+            <span className="Summery__CurrentWeather__Temp__Num">
+              {roundNum(currentWeather?.temp)}
+            </span>
+            <span className="Summery__CurrentWeather__Temp__Unit">℃</span>
+          </div>
+        )}
+      </div>
+      <div className="Summery__Statistics">
+        {currentWeather?.temp_max && (
+          <div className="Summery__Statistics__Content Summery__Statistics__Content--Max">
+            <span className="Summery__Statistics__Content__Title">
+              最高気温
+            </span>
+            <span className="Summery__Statistics__Content__Num">
+              {roundNum(currentWeather?.temp_max)}
+            </span>
+            <span className="Summery__Statistics__Content__Unit">℃</span>
+          </div>
+        )}
+        {currentWeather?.temp_min && (
+          <div className="Summery__Statistics__Content Summery__Statistics__Content--Min">
+            <span className="Summery__Statistics__Content__Title">
+              最低気温
+            </span>
+            <span className="Summery__Statistics__Content__Num">
+              {roundNum(currentWeather?.temp_min)}
+            </span>
+            <span className="Summery__Statistics__Content__Unit">℃</span>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

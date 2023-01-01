@@ -48,7 +48,7 @@ export const Graph = () => {
       <AreaChart
         className="AreaChart"
         width={800}
-        height={400}
+        height={300}
         data={forecastList}
         margin={{
           top: 20,

@@ -1,3 +1,40 @@
 .Summery {
   width: 800px;
+  display: flex;
+  justify-content: space-between;
+  &__CurrentWeather {
+    display: flex;
+    align-items: center;
+    &__Temp {
+      &__Num {
+        font-size: 132px;
+      }
+      &__Unit {
+        margin-left: 16px;
+        font-size: 40px;
+      }
+    }
+  }
+  &__Statistics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__Content {
+      display: flex;
+      align-items: flex-end;
+      border-bottom: 1px solid;
+      &__Title {
+        font-size: 20px;
+      }
+      &__Num {
+        font-size: 48px;
+        line-height: 1.2;
+        margin-left: 20px;
+      }
+      &__Unit {
+        font-size: 20px;
+        margin-left: 8px;
+      }
+    }
+  }
 }
