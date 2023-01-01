@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { WeatherContext } from "components/providers/CurrentWeather";
+import { WeatherContext } from "components/providers/Weather";
 import { roundNum } from "hooks/useNumber";
 
 import { WeatherIcon } from "components/WeatherIcon";

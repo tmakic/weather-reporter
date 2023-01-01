@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AreaChart, Area, LabelList, XAxis } from "recharts";
-import { WeatherContext } from "components/providers/CurrentWeather";
+import { WeatherContext } from "components/providers/Weather";
 
 import "./Graph.scss";
 

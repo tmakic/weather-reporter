@@ -4,7 +4,7 @@ import "./App.scss";
 import { Summery } from "./components/Summery";
 import { Graph } from "./components/Graph";
 
-import { WeatherProvider } from "./components/providers/CurrentWeather";
+import { WeatherProvider } from "./components/providers/Weather";
 
 function App() {
   return (
