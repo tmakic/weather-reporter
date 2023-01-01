@@ -7,6 +7,8 @@ import {
   ApiResponse
 } from "../../types";
 
+import { roundNum } from "hooks/useNumber";
+
 import axiosBase from "axios";
 
 const axios = axiosBase.create({
@@ -21,7 +23,8 @@ import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.tz.setDefault("Asia/Tokyo");
-const formatDate = (unixtime: number) => dayjs.unix(unixtime).tz().format();
+const formatDate = (unixtime: number, format?: string) =>
+  dayjs.unix(unixtime).tz().format(format);
 
 const defaultValue = {
   currentWeather: undefined,
@@ -33,9 +36,7 @@ interface WeatherContext {
   forecastList: DisplayForecast[] | undefined;
 }
 
-export const WeatherContext = createContext<WeatherContext | undefined>(
-  defaultValue
-);
+export const WeatherContext = createContext<WeatherContext>(defaultValue);
 
 export const WeatherProvider = (props: { children: ReactNode }) => {
   const { children } = props;
@@ -94,10 +95,10 @@ export const WeatherProvider = (props: { children: ReactNode }) => {
       .then((response) => {
         setCurrentWeather({
           datetime: formatDate(response.data.dt),
-          feels_like: response.data.main.feels_like,
-          temp: response.data.main.temp,
-          temp_max: response.data.main.temp_max,
-          temp_min: response.data.main.temp_min
+          feels_like: roundNum(response.data.main.feels_like),
+          temp: roundNum(response.data.main.temp),
+          temp_max: roundNum(response.data.main.temp_max),
+          temp_min: roundNum(response.data.main.temp_min)
         });
       });
   };
@@ -116,14 +117,14 @@ export const WeatherProvider = (props: { children: ReactNode }) => {
       })
       .then((response) => {
         const newForecasList = response.data.list
-          .slice(0, 6)
+          .slice(0, 9)
           .map((forecast) => {
             return {
-              datetime: formatDate(forecast.dt),
-              feels_like: forecast.main.feels_like,
-              temp: forecast.main.temp,
-              temp_max: forecast.main.temp_max,
-              temp_min: forecast.main.temp_min,
+              datetime: formatDate(forecast.dt, "h:mm"),
+              feels_like: roundNum(forecast.main.feels_like),
+              temp: roundNum(forecast.main.temp),
+              temp_max: roundNum(forecast.main.temp_max),
+              temp_min: roundNum(forecast.main.temp_min),
               weather: forecast.weather[0]
             };
           });
