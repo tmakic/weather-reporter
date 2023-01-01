@@ -2,11 +2,12 @@ import React, { useContext } from "react";
 import { WeatherContext } from "components/providers/CurrentWeather";
 import { roundNum } from "hooks/useNumber";
 
+import "./Summery.css";
+
 export const Summery = () => {
   const weatherContext = useContext(WeatherContext);
   return (
-    <div>
-      Here is Summery!{weatherContext?.currentWeather?.datetime}
+    <div className="Summery">
       {weatherContext?.currentWeather?.temp && (
         <div>{roundNum(weatherContext?.currentWeather?.temp)}℃</div>
       )}

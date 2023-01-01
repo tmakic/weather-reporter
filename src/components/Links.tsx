@@ -6,7 +6,6 @@ export const Links = () => {
   const weatherContext = useContext(WeatherContext);
   return (
     <div className="Links">
-      Here is Links!
       {weatherContext?.currentWeather?.temp_max && (
         <a
           href={`https://www.google.com/search?q=気温${roundNum(
