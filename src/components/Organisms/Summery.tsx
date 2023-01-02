@@ -16,7 +16,7 @@ export const Summery = () => {
           <WeatherIcon
             icon={currentWeather?.weather.icon}
             alt="WeatherIcon"
-            width="200px"
+            width="280px"
           />
         )}
         {currentWeather?.temp && (

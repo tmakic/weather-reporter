@@ -1,11 +1,13 @@
 .Summery {
-  width: 800px;
-  padding: 0 20px;
+  width: 880px;
+  padding: 0 60px 0 0;
   display: flex;
   justify-content: space-between;
   &__CurrentWeather {
     display: flex;
     align-items: center;
+    height: 200px;
+    overflow: hidden;
     &__Temp {
       &__Num {
         font-size: 132px;

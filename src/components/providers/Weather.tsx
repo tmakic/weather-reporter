@@ -28,10 +28,8 @@ export const WeatherProvider = (props: { children: ReactNode }) => {
   const [forecastList, setForecastList] = useState<DisplayForecast[]>();
 
   useEffect(() => {
-    (async () => {
-      getCurrentWeather();
-      getForecast();
-    })();
+    getCurrentWeather();
+    getForecast();
   }, [coord]);
 
   const getCurrentWeather = () => {
@@ -48,7 +46,7 @@ export const WeatherProvider = (props: { children: ReactNode }) => {
       })
       .then((response) => {
         setCurrentWeather({
-          datetime: formatDate(response.data.dt),
+          datetime: formatDate(response.data.dt, "YYYY/M/D(dd)"),
           feels_like: roundNum(response.data.main.feels_like),
           temp: roundNum(response.data.main.temp),
           temp_max: roundNum(response.data.main.temp_max),
