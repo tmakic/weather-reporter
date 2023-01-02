@@ -13,7 +13,7 @@ export const LabelContent = ({
 
   return (
     <g>
-      <text x={Number(x)} y={Number(y) - 10} fill="#48484A" textAnchor="middle">
+      <text x={Number(x)} y={Number(y) - 10} fill="#E96E50" textAnchor="middle">
         {value}
       </text>
     </g>

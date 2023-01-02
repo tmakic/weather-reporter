@@ -23,7 +23,7 @@ export const Graph = () => {
         }}
       >
         <XAxis dataKey="x_axis_data" interval={0} tick={XAxisTick}></XAxis>
-        <Area type="monotone" dataKey="temp" stroke="#D2D2D2" fill="#F2F2F2">
+        <Area type="monotone" dataKey="temp" stroke="#F8D3CA" fill="#FAE2DC">
           <LabelList dataKey="temp" position="top" content={LabelContent} />
         </Area>
       </AreaChart>
