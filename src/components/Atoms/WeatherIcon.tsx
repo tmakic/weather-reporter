@@ -8,9 +8,11 @@ export const WeatherIcon = (props: {
   alt: string;
   width?: string;
   height?: string;
+  className?: string;
 }) => {
   return (
     <img
+      className={props.className}
       style={{ width: props.width, height: props.height }}
       src={`http://openweathermap.org/img/wn/${props.icon}@2x.png`}
       alt={props.alt}

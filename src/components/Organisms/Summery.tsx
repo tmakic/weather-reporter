@@ -13,11 +13,13 @@ export const Summery = () => {
     <div className="Summery">
       <div className="Summery__CurrentWeather">
         {currentWeather?.weather.icon && (
-          <WeatherIcon
-            icon={currentWeather?.weather.icon}
-            alt="WeatherIcon"
-            width="280px"
-          />
+          <div className="Summery__CurrentWeather__IconWrapper">
+            <WeatherIcon
+              icon={currentWeather?.weather.icon}
+              alt="WeatherIcon"
+              width="280px"
+            />
+          </div>
         )}
         {currentWeather?.temp && (
           <div className="Summery__CurrentWeather__Temp">

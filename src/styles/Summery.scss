@@ -8,9 +8,13 @@
     align-items: center;
     height: 200px;
     overflow: hidden;
+    &__IconWrapper {
+      width: 240px;
+      overflow: hidden;
+    }
     &__Temp {
       &__Num {
-        font-size: 132px;
+        font-size: 140px;
         font-weight: bold;
       }
       &__Unit {

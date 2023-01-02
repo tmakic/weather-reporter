@@ -15,7 +15,11 @@ export const StatisticsPanel = ({
   tempType?: TempType;
 }) => {
   return (
-    <div className="StatisticsPanel">
+    <div
+      className={
+        "StatisticsPanel" + (tempType ? ` StatisticsPanel--${tempType}` : "")
+      }
+    >
       <span className="StatisticsPanel__Title">{title}</span>
       <span className="StatisticsPanel__Content">
         <span className="StatisticsPanel__Content__Num">{roundNum(temp)}</span>

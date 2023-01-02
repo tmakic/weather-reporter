@@ -2,13 +2,19 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  border-bottom: 1px solid;
+  border-bottom: 2px solid;
+  &--max {
+    border-color: #E96E50;
+  }
+  &--min {
+    border-color: #78CBBF;
+  }
   &__Title {
-    font-size: 20px;
+    font-size: 18px;
   }
   &__Content {
     &__Num {
-      font-size: 48px;
+      font-size: 44px;
       line-height: 1.2;
       margin-left: 20px;
       font-weight: bold;
@@ -20,5 +26,8 @@
     &__ClothSearch {
       padding: 3px;
     }
+  }
+  &:nth-child(n+2) {
+    margin-top: 4px;
   }
 }
