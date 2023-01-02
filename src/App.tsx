@@ -2,7 +2,7 @@ import React from "react";
 import "styles/App.scss";
 
 import { Date } from "components/Organisms/Date";
-import { Summery } from "components/Organisms/Summery";
+import { Summary } from "components/Organisms/Summary";
 import { Graph } from "components/Organisms/Graph";
 
 import { WeatherProvider } from "./components/providers/Weather";
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <WeatherProvider>
         <Date />
-        <Summery />
+        <Summary />
         <Graph />
       </WeatherProvider>
     </div>

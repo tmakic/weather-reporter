@@ -5,15 +5,15 @@ import { tempTypeLabel } from "utils/WeatherUtils";
 import { WeatherIcon } from "components/Atoms/WeatherIcon";
 import { StatisticsPanel } from "components/Molecules/StatisticsPanel";
 
-import "styles/Summery.scss";
+import "styles/Summary.scss";
 
-export const Summery = () => {
+export const Summary = () => {
   const { currentWeather } = useContext(WeatherContext);
   return (
-    <div className="Summery">
-      <div className="Summery__CurrentWeather">
+    <div className="Summary">
+      <div className="Summary__CurrentWeather">
         {currentWeather?.weather.icon && (
-          <div className="Summery__CurrentWeather__IconWrapper">
+          <div className="Summary__CurrentWeather__IconWrapper">
             <WeatherIcon
               icon={currentWeather?.weather.icon}
               alt="WeatherIcon"
@@ -22,15 +22,15 @@ export const Summery = () => {
           </div>
         )}
         {currentWeather?.temp && (
-          <div className="Summery__CurrentWeather__Temp">
-            <span className="Summery__CurrentWeather__Temp__Num">
+          <div className="Summary__CurrentWeather__Temp">
+            <span className="Summary__CurrentWeather__Temp__Num">
               {roundNum(currentWeather?.temp)}
             </span>
-            <span className="Summery__CurrentWeather__Temp__Unit">℃</span>
+            <span className="Summary__CurrentWeather__Temp__Unit">℃</span>
           </div>
         )}
       </div>
-      <div className="Summery__Statistics">
+      <div className="Summary__Statistics">
         {currentWeather?.temp_max && (
           <StatisticsPanel
             title={`${tempTypeLabel("max")}気温`}
