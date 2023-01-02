@@ -1,0 +1,11 @@
+.ClothSearch {
+  color: inherit;
+  filter: opacity(50%);
+  &:hover {
+    filter: opacity(25%);
+  }
+}
+
+.ClothSearchIcon {
+  margin-left: 12px;
+}

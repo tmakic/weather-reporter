@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.scss";
+import "styles/App.scss";
 
-import { Summery } from "./components/Summery";
-import { Graph } from "./components/Graph";
+import { Summery } from "./components/Organisms/Summery";
+import { Graph } from "./components/Organisms/Graph";
 
 import { WeatherProvider } from "./components/providers/Weather";
 

@@ -1,0 +1,25 @@
+.Summery {
+  width: 800px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  &__CurrentWeather {
+    display: flex;
+    align-items: center;
+    &__Temp {
+      &__Num {
+        font-size: 132px;
+        font-weight: bold;
+      }
+      &__Unit {
+        margin-left: 16px;
+        font-size: 40px;
+      }
+    }
+  }
+  &__Statistics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

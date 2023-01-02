@@ -1,3 +1,4 @@
+export type TempType = "min" | "max";
 export interface CurrentWeather {
   datetime: any; // TODO:後で直す
   feels_like: number;
