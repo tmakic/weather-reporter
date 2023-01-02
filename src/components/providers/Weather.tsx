@@ -28,11 +28,11 @@ export const WeatherProvider = (props: { children: ReactNode }) => {
   const [forecastList, setForecastList] = useState<DisplayForecast[]>();
 
   useEffect(() => {
-    getCurrentWeather();
-    getForecast();
+    fetchCurrentWeather();
+    fetchForecast();
   }, [coord]);
 
-  const getCurrentWeather = () => {
+  const fetchCurrentWeather = () => {
     if (!coord) return;
     axios
       .get<ApiResponse.GetWeather>("/weather", {
@@ -56,7 +56,7 @@ export const WeatherProvider = (props: { children: ReactNode }) => {
       });
   };
 
-  const getForecast = () => {
+  const fetchForecast = () => {
     if (!coord) return;
     axios
       .get<ApiResponse.GetForecastList>("/forecast", {
